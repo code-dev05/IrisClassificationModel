@@ -30,6 +30,9 @@ model.fit(x_train, y_train)
 # Prediciting the labels using testing data as the input
 y_pred = model.predict(x_test)
 
+print(f'Accuracy of Training Data: {model.score(x_train, y_train)*100: .2f}%')
+print(f'Accuracy of Testing Data: {model.score(x_test, y_test)*100: .2f}%')
+
 # Forming a confusion matrix to compare the true labels and the predicted labels
 cm = confusion_matrix(y_test, y_pred)
 
@@ -74,6 +77,3 @@ ax5.set_xlabel('PetalWidthCm')
 ax5.set_ylabel('Frequency')
 
 plt.show()
-
-print(f'Accuracy of Training Data: {model.score(x_train, y_train)*100: .2f}%')
-print(f'Accuracy of Testing Data: {model.score(x_test, y_test)*100: .2f}%')
